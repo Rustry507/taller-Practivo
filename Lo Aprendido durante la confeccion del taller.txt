@@ -1,0 +1,60 @@
+Durante el desarrollo del taller entendí como iba diseñar una base de datos usando SQLite, creando tablas para usuarios y expedientes
+También comprendi como conectar Python con una base de datos mediante sqlite3(use intellij era super fácil)
+Desarrollé una API REST simple usando Flask implementando rutas para crear usuarios, iniciar sesión, registrar expedientes, consultar la agenda, editar y 
+eliminar datos
+Además agregye una interfaz web en HTML que se comunica con Flask mediante fetch Esto permitió que el usuario pudiera ingresar al sistema
+ver la agenda y administrar expedientes desde una página web (sigue siendo un proto y no es perfecto)
+
+También comprenmdi un poco como iba el uso del Postman para probar las rutas de la API y crear las credenciales de los usuarios
+
+al final logré crear una  protoApp básica para administrar agregar, editar, eliminar agenda.
+
+
++----------------------+
+|     WebPage.html     |
+|        Login         |
+|                      |
+|  Usuario             |
+|  Contrasena          |
++----------+-----------+
+           |
+           | POST /login
+           v
++----------------------+
+|   JavaScript fetch   |
+|                      |
+| Envia los datos      |
+| en formato JSON      |
++----------+-----------+
+           |
+           v
++----------------------+
+|      Taller.py       |
+|   Backend Flask      |
+|                      |
+| Recibe las rutas:    |
+| /login               |
+| /usuarios            |
+| /expedientes         |
++----------+-----------+
+           |
+           | sqlite3
+           v
++----------------------+
+|     database.db      |
+|       SQLite         |
++----------+-----------+
+           |
+           +-----------------------------+
+           |                             |
+           v                             v
++----------------------+       +----------------------+
+|      usuarios        |       |     expedientes      |
++----------------------+       +----------------------+
+| PK id                |       | PK id                |
+| username             |       | cliente              |
+| password             |       | aseguradora          |
++----------------------+       | juzgado              |
+                               | estado               |
+                               | fecha                |
+                               +----------------------¿
